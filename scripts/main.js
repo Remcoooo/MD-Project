@@ -23,3 +23,5 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+reveal = window.matchMedia("(max-width: 48em)")

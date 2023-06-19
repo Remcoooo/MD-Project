@@ -168,8 +168,7 @@ header {
   margin-inline: auto;
   position: relative;
   margin-block: var(--size-500);
-  width: 13%;
-  left: -30px;
+  width: 12%;
 }
 .nav-wrapper .h1 {
   position: absolute;
@@ -255,6 +254,15 @@ header {
   display: flex;
 }
 
+@media (max-width: 38em) {
+  .nav-wrapper .header-logo {
+    top: 18%;
+    width: 40%;
+  }
+  .primary-navigation ul {
+    width: 100vw;
+  }
+}
 main {
   position: relative;
   display: grid;
@@ -327,17 +335,38 @@ main {
   font-size: var(--fs-800);
   margin-left: 40px !important;
 }
-.main_info button {
-  border-radius: var(--size-300);
-  padding-block: var(--size-300);
-  padding-inline: var(--size-500);
-  cursor: pointer;
+.main_info .buy-button {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
   transition: all 120ms ease-in;
+  text-decoration: none;
+  color: black;
 }
-.main_info button:hover {
+.main_info .buy-button:hover {
   transform: translate(2px, -2px);
 }
 
+@media (max-width: 48em) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .interactive_map iframe {
+    width: 100vw;
+  }
+  .main_info {
+    width: 100vw;
+  }
+  .main_info .title {
+    margin: 0 !important;
+  }
+  .main_info .middle {
+    margin-inline: auto;
+  }
+  .main_info .v2 {
+    display: none !important;
+  }
+}
 .line-up-container {
   background-color: var(--clr-secondary-100);
   position: relative;
@@ -380,6 +409,15 @@ main {
   height: 160px;
 }
 
+@media (max-width: 48em) {
+  .h3 {
+    display: none !important;
+  }
+  .line-up div {
+    gap: 3em;
+    flex-direction: column;
+  }
+}
 footer {
   display: flex;
   position: relative;
@@ -392,7 +430,7 @@ footer .logo-section {
 }
 footer .footer-title {
   font-size: var(--fs-700);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-bold);
 }
 footer .footer-list {
   display: flex;
@@ -468,6 +506,22 @@ footer .footer-column a:hover::after {
   height: var(--size-800);
 }
 
+@media (max-width: 48em) {
+  footer {
+    flex-direction: column;
+    gap: 4em;
+  }
+  .footer-list {
+    flex-direction: column;
+    gap: 2em !important;
+    margin-inline: auto;
+  }
+  .social-icons {
+    flex-direction: row;
+    margin-inline: auto;
+    padding: 0 !important;
+  }
+}
 @-webkit-keyframes menuSlideIn {
   0% {
     opacity: 0;
@@ -478,7 +532,6 @@ footer .footer-column a:hover::after {
     left: 0;
   }
 }
-
 @keyframes menuSlideIn {
   0% {
     opacity: 0;
@@ -613,6 +666,7 @@ footer .footer-column a:hover::after {
   }
 }
 #button {
+  position: fixed;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -645,7 +699,6 @@ footer .footer-column a:hover::after {
   border-radius: 100px;
   height: 3px;
   position: absolute;
-  left: 35px;
   top: 50%;
   transition: all 0.25s;
   width: 40px;
